@@ -8,7 +8,7 @@ plugins {
 
 val githubPropertiesFile = rootProject.file("github.properties")
 val githubProperties = Properties()
-githubProperties.load(githubPropertiesFile.inputStream())
+//githubProperties.load(githubPropertiesFile.inputStream())
 
 android {
     namespace = "com.example.poc_sdk"
