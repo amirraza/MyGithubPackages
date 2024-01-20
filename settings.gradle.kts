@@ -10,7 +10,7 @@ pluginManagement {
 
 val githubPropertiesFile = file("github.properties")
 val githubProperties = Properties()
-githubProperties.load(githubPropertiesFile.inputStream())
+//githubProperties.load(githubPropertiesFile.inputStream())
 
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
