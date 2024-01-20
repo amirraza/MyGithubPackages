@@ -10,7 +10,8 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-      - name: Verifying Test Cases
+          cache: gradle
+      - name: Verify Test Cases
         run: ./gradlew testReleaseUnitTest
       - name: Assemble Release
         run: ./gradlew assembleRelease
