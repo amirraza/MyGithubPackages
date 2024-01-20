@@ -10,8 +10,8 @@ jobs:
         with:
           java-version: 17
           distribution: 'adopt'
-      - name: Checking Test Cases
-        run: ./gradlew runReleaseUnitTest
+      - name: Verifying Test Cases
+        run: ./gradlew testReleaseUnitTest
       - name: Assemble Release
         run: ./gradlew assembleRelease
 
