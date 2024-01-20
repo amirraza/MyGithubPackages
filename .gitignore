@@ -1,3 +1,5 @@
 github.properties
 local.properties
 .idea
+/poc-sdk/.gradle
+/poc-sdk/.build

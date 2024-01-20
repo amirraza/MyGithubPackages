@@ -23,11 +23,14 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
             )
+        }
+        debug {
+            isMinifyEnabled = false
         }
     }
     compileOptions {
@@ -47,11 +50,9 @@ java {
 publishing {
     publications {
         create<MavenPublication>("mavenJava") {
-//            from(components["java"])
-
             groupId = "com.poc"
             artifactId = "poc-sdk"
-            version = "1.0-beta"
+            version = "3.0"
             artifact("$buildDir/outputs/aar/poc-sdk-release.aar")
         }
 
@@ -67,6 +68,14 @@ publishing {
             }
         }
     }
+}
+
+tasks.named("assemble").configure {
+    finalizedBy("publish")
+}
+
+tasks.withType<PublishToMavenRepository> {
+    dependsOn("assemble")
 }
 
 dependencies {
