@@ -13,6 +13,6 @@ jobs:
           cache: gradle
       - name: Verify Test Cases
         run: ./gradlew testReleaseUnitTest
-      - name: Assemble Release
-        run: ./gradlew assembleRelease
+      - name: Assemble
+        run: ./gradlew assemble
 
