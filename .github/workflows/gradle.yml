@@ -1,4 +1,5 @@
 name: "CI with Github Actions"
+author: "Amir Raza"
 on: [push]
 jobs:
   build:
