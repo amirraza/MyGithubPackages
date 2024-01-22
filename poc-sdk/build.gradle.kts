@@ -70,13 +70,13 @@ publishing {
     }
 }
 
-tasks.named("assemble").configure {
+/*tasks.named("assemble").configure {
     finalizedBy("publish")
 }
 
 tasks.withType<PublishToMavenRepository> {
     dependsOn("assemble")
-}
+}*/
 
 dependencies {
 
