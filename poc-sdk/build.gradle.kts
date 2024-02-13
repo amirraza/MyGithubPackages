@@ -52,11 +52,17 @@ publishing {
         create<MavenPublication>("mavenJava") {
             groupId = "com.poc"
             artifactId = "poc-sdk"
-            version = "3.0"
+            version = "4.0"
             artifact("$buildDir/outputs/aar/poc-sdk-release.aar")
         }
 
         repositories {
+            //push to jitpack
+            maven {
+                url = uri("https://jitpack.io")
+            }
+
+            //push to github packages
             maven {
                 name = "GitHubPackages"
                 url = uri("https://maven.pkg.github.com/amirraza/MyGithubPackages")
@@ -70,13 +76,13 @@ publishing {
     }
 }
 
-/*tasks.named("assemble").configure {
+tasks.named("assemble").configure {
     finalizedBy("publish")
 }
 
 tasks.withType<PublishToMavenRepository> {
     dependsOn("assemble")
-}*/
+}
 
 dependencies {
 
